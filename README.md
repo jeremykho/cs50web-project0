@@ -17,8 +17,7 @@ HTML Pages
 1. custom.scss >>> SASS script for my custom CSS
 2. custom.css >>> compiled stylesheet from SASS
 
-/img/ folder:
-** images used in the website
+/img/ folder: images used in the website
 
 
 
