@@ -3,35 +3,44 @@
 // Variable Overrides
 
 // Bootstrap and its default variables
-// @import "../bootstrap/scss/bootstrap";
+@import "../bootstrap/scss/bootstrap";
 
 // Sass Variables
-$theme-black: #2f3131;
+$theme-black: #2f3131; // currently unused
 $theme-white: #f8f1e5;
 $theme-blue: #426e86;
 $theme-yellow: #f9ba32;
 $theme-font: "Avenir";
 
+%set-width-to-parent {
+    width: 100%;
+    height: auto;
+}
+
 body {
+    // General theme
     background-color: $theme-blue;
     color: $theme-white;
     font-family: $theme-font;
 
+    // Yellow emphasis
+    span.emphasis {
+        color: $theme-yellow;
+    }
+
+    // Custom navbar style
     .navbar{
-
-        .navbar-toggler {
-            border-color: $theme-white;
-        }
-
-        .navbar-toggler:focus {
-            outline: none;
-        }
 
         .nav-link {
             color:$theme-white;
             position: relative;
         }
 
+        .navbar-brand {
+            color:$theme-white;
+        }
+
+        // Yellow underline on hover
         .nav-link:hover:after {
             content: "";
             border-bottom: 3px solid $theme-yellow;
@@ -42,23 +51,41 @@ body {
             bottom: 4px;
         }
 
+        // Highlight active page
         #navbarSupportedContent .active .nav-link{
             color:$theme-yellow;
             font-weight: bold;
         }
 
-        .navbar-brand {
-            color:$theme-white;
-        }
-
+        // Center items in hamburger dropdown menu
         .navbar-collapse {
             text-align: center;
         }
 
+        // Override hamburger button color
+        .navbar-toggler {
+            border-color: $theme-white;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
     }
 
+    // Set margin for all Bootstrap rows
+    div.container div.row {
+        margin: 32px;
+    }
+
+    // Style for headers
+    .center-header {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    // Style for home.html
     .home {
-        margin: 24px;
         div {
             .home-img {
                 height: 500px;
@@ -66,29 +93,18 @@ body {
                 object-fit: cover;
                 border: 1px solid $theme-white;
             }
-
-            p {
-                font-size: 60px;
-                font-weight: bold;
+            h1 {
+                font-size: 5vw;
             }
         }
     }
 
-    .long-text {
-        padding: 10%;
-        p {
-            font-size: 24px;
-        }
+    .long-text p {
+        font-size: 24px;
     }
 
-    span.emphasis {
-        color: $theme-yellow;
-        font-weight: bold;
-    }
-
+    // Style for skills.html
     .skills {
-        margin: 32px;
-
         div {
             p {
                 font-size: 32px;
@@ -107,13 +123,12 @@ body {
         }
     }
 
+    // Style for work.html
     .work {
-        margin: 32px;
         div {
             padding: 20px;
             .work-logo {
-                height: auto;
-                width: 100%;
+                @extend %set-width-to-parent;
                 object-fit: cover;
                 background-color: #FFFFFF;
             }
@@ -123,12 +138,7 @@ body {
         }
     }
 
-    .work-header {
-        margin: 32px;
-        margin-top: 44px;
-        text-align: center;
-    }
-
+    // Style unordered list of projects
     .project-list {
         font-size: 24px;
         list-style: circle inside;
@@ -138,18 +148,19 @@ body {
         }
     }
 
+    // Style table of connect links 
     table.connect {
         width: 100%;
         font-size: 40px;
         text-align: center;
 
         tr {
-            height: 120px;
+            height: 3em; // dependent on table font-size
 
             td {
                 width: 50%;
                 a {
-                    color: $theme-white;
+                    color: $theme-white; // override default hyperlink color
                 }
             }
 
@@ -162,12 +173,15 @@ body {
 
     @include media-breakpoint-down(md) {
         .container {
+            // remove side margins
             max-width: 991.98px;
 
-            div.home-left p {
-                font-size: 50px;
+            // responsive font size
+            div.home-left h1 {
+                font-size: 6vw;
             }
 
+            // responsive home image
             div.home-right .home-img {
                 height: auto;
                 width: 100%;
@@ -176,22 +190,23 @@ body {
     }
 
     @include media-breakpoint-down(sm) {
-        .home div.home-left p {
+        // fixed font size
+        .home div.home-left h1 {
             font-size: 40px;
         }
 
+        // Fix font size
         .long-text p {
             font-size: 20px;
         }
 
+        // In sm screens, image and text stack vertically, centered on the page
         .skills div {
             min-height: 180px;
-
             p {
                 text-align: center;
                 padding: 30px;
             }
-
             .skills-img {
                 position: absolute;
                 left: 50%;
@@ -200,23 +215,15 @@ body {
         }
     }
 
+    // In xs screens, superimpose the text and image
     @include media-breakpoint-down(xs) {
         .home {
             div.home-right {
-                width: 85vw;
-                min-width: 85vw;
-                height: auto;
+                width: 100%;
                 position: relative;
                 z-index: 1;
                 padding: 0%;
-
-                .home-img {
-                    height: auto;
-                    width: 100%;
-                    border: 1px solid $theme-white;
-                }
             }
-
             div.home-left {
                 position: absolute;
                 left: 67%;
@@ -224,9 +231,7 @@ body {
                 top: 40%;
                 transform: translate(-50%,-50%);
                 z-index: 2;
-
-                p {
-                    font-size: 40px;
+                h1 {
                     color: $theme-blue;
                 }
             }

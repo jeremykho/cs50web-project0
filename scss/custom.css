@@ -8234,20 +8234,25 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
+body .work div .work-logo {
+  width: 100%;
+  height: auto;
+}
+
 body {
   background-color: #426e86;
   color: #f8f1e5;
   font-family: "Avenir";
 }
-body .navbar .navbar-toggler {
-  border-color: #f8f1e5;
-}
-body .navbar .navbar-toggler:focus {
-  outline: none;
+body span.emphasis {
+  color: #f9ba32;
 }
 body .navbar .nav-link {
   color: #f8f1e5;
   position: relative;
+}
+body .navbar .navbar-brand {
+  color: #f8f1e5;
 }
 body .navbar .nav-link:hover:after {
   content: "";
@@ -8262,14 +8267,21 @@ body .navbar #navbarSupportedContent .active .nav-link {
   color: #f9ba32;
   font-weight: bold;
 }
-body .navbar .navbar-brand {
-  color: #f8f1e5;
-}
 body .navbar .navbar-collapse {
   text-align: center;
 }
-body .home {
-  margin: 24px;
+body .navbar .navbar-toggler {
+  border-color: #f8f1e5;
+}
+body .navbar .navbar-toggler:focus {
+  outline: none;
+}
+body div.container div.row {
+  margin: 32px;
+}
+body .center-header {
+  margin-top: 40px;
+  text-align: center;
 }
 body .home div .home-img {
   height: 500px;
@@ -8277,22 +8289,11 @@ body .home div .home-img {
   object-fit: cover;
   border: 1px solid #f8f1e5;
 }
-body .home div p {
-  font-size: 60px;
-  font-weight: bold;
-}
-body .long-text {
-  padding: 10%;
+body .home div h1 {
+  font-size: 5vw;
 }
 body .long-text p {
   font-size: 24px;
-}
-body span.emphasis {
-  color: #f9ba32;
-  font-weight: bold;
-}
-body .skills {
-  margin: 32px;
 }
 body .skills div p {
   font-size: 32px;
@@ -8306,25 +8307,15 @@ body .skills div .skills-img {
   width: 300px;
   object-fit: cover;
 }
-body .work {
-  margin: 32px;
-}
 body .work div {
   padding: 20px;
 }
 body .work div .work-logo {
-  height: auto;
-  width: 100%;
   object-fit: cover;
   background-color: #FFFFFF;
 }
 body .work div .linked:hover {
   border: #f9ba32 solid 5px;
-}
-body .work-header {
-  margin: 32px;
-  margin-top: 44px;
-  text-align: center;
 }
 body .project-list {
   font-size: 24px;
@@ -8339,7 +8330,7 @@ body table.connect {
   text-align: center;
 }
 body table.connect tr {
-  height: 120px;
+  height: 3em;
 }
 body table.connect tr td {
   width: 50%;
@@ -8355,8 +8346,8 @@ body table.connect tr td a:hover {
   body .container {
     max-width: 991.98px;
   }
-  body .container div.home-left p {
-    font-size: 50px;
+  body .container div.home-left h1 {
+    font-size: 6vw;
   }
   body .container div.home-right .home-img {
     height: auto;
@@ -8364,7 +8355,7 @@ body table.connect tr td a:hover {
   }
 }
 @media (max-width: 767.98px) {
-  body .home div.home-left p {
+  body .home div.home-left h1 {
     font-size: 40px;
   }
   body .long-text p {
@@ -8385,17 +8376,10 @@ body table.connect tr td a:hover {
 }
 @media (max-width: 575.98px) {
   body .home div.home-right {
-    width: 85vw;
-    min-width: 85vw;
-    height: auto;
+    width: 100%;
     position: relative;
     z-index: 1;
     padding: 0%;
-  }
-  body .home div.home-right .home-img {
-    height: auto;
-    width: 100%;
-    border: 1px solid #f8f1e5;
   }
   body .home div.home-left {
     position: absolute;
@@ -8405,8 +8389,7 @@ body table.connect tr td a:hover {
     transform: translate(-50%, -50%);
     z-index: 2;
   }
-  body .home div.home-left p {
-    font-size: 40px;
+  body .home div.home-left h1 {
     color: #426e86;
   }
 }
