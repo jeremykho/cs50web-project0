@@ -1,0 +1,98 @@
+// Custom.scss
+
+// Variable Overrides
+
+// Bootstrap and its default variables
+@import "../bootstrap/scss/bootstrap";
+
+// Sass Variables
+$background-color: #2f3131;
+$font-color: #f8f1e5;
+$special-color: #426e86;
+$highlight-color: #f9ba32;
+$font-1: "Gotham";
+$font-2: "Avenir";
+
+body {
+    background-color: $background-color;
+    color: $font-color;
+    font-family: $font-2;
+}
+
+#row {
+    align-items: stretch;
+}
+
+#sidebar {
+    background-color: $special-color;
+    padding: 16px;
+    height: 100vh;
+    // -ms-flex: 0 0 320px;
+    flex: 0 0 310px;
+    // position: relative;
+
+    img {
+        // display: block;
+        max-width: 60%;
+        // position: absolute;
+        // height: 100%;
+    }
+
+    #sidebar-name {
+
+        border-bottom: 1px solid $font-color;
+        margin-bottom: 12px;
+        padding: 12px;
+
+        h2, h5 {
+            text-align: center;
+        }
+    }
+    
+
+    nav {
+
+        .nav-item {
+            font-size: 30px;
+            color: $font-color;
+            position: relative;
+        }
+        .nav-item:hover:after {
+            content: "";
+            border-bottom: 5px solid $highlight-color;
+            border-radius: 3px;
+            position: absolute;
+            width: 50%;
+            left: 25%;
+            right: 0px;
+            bottom: 4px;
+        }
+        .active {
+            color: $highlight-color;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #sidebar {
+        // display: none;
+    }
+}
+
+#content {
+    margin: 24px;
+    // padding: 24px;
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+
+    p {
+        font-size: 20px;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        transform: translate(0%,-50%);
+        // bottom: 50%;
+
+    }
+}

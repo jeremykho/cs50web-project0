@@ -1,0 +1,236 @@
+// Custom.scss
+
+// Variable Overrides
+
+// Bootstrap and its default variables
+@import "../bootstrap/scss/bootstrap";
+
+// Sass Variables
+$theme-black: #2f3131;
+$theme-white: #f8f1e5;
+$theme-blue: #426e86;
+$theme-yellow: #f9ba32;
+$theme-font: "Avenir";
+
+body {
+    background-color: $theme-blue;
+    color: $theme-white;
+    font-family: $theme-font;
+
+    .navbar{
+
+        .navbar-toggler {
+            border-color: $theme-white;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+        .nav-link {
+            color:$theme-white;
+            position: relative;
+        }
+
+        .nav-link:hover:after {
+            content: "";
+            border-bottom: 3px solid $theme-yellow;
+            border-radius: 3px;
+            position: absolute;
+            width: 60%;
+            left: 20%;
+            bottom: 4px;
+        }
+
+        #navbarSupportedContent .active .nav-link{
+            color:$theme-yellow;
+            font-weight: bold;
+        }
+
+        .navbar-brand {
+            color:$theme-white;
+        }
+
+        .navbar-collapse {
+            text-align: center;
+        }
+
+    }
+
+    .home {
+        margin: 24px;
+        div {
+            .home-img {
+                height: 500px;
+                width: 350px;
+                object-fit: cover;
+                border: 1px solid $theme-white;
+            }
+
+            p {
+                font-size: 60px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .long-text {
+        padding: 10%;
+        p {
+            font-size: 24px;
+        }
+    }
+
+    span.emphasis {
+        color: $theme-yellow;
+        font-weight: bold;
+    }
+
+    .skills {
+        margin: 32px;
+
+        div {
+            p {
+                font-size: 32px;
+                font-weight: bold;
+
+                .skills-desc {
+                    font-size: 24px;
+                }
+            }
+
+            .skills-img {
+                height: 200px;
+                width: 300px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .work {
+        margin: 32px;
+        div {
+            padding: 20px;
+            .work-logo {
+                height: auto;
+                width: 100%;
+                object-fit: cover;
+                background-color: #FFFFFF;
+            }
+            .linked:hover {
+                border: $theme-yellow solid 5px;
+            }
+        }
+    }
+
+    .work-header {
+        margin: 32px;
+        margin-top: 44px;
+        text-align: center;
+    }
+
+    .project-list {
+        font-size: 24px;
+        list-style: circle inside;
+
+        li {
+            margin-top: 20px;
+        }
+    }
+
+    table.connect {
+        width: 100%;
+        font-size: 40px;
+        text-align: center;
+
+        tr {
+            height: 120px;
+
+            td {
+                width: 50%;
+                a {
+                    color: $theme-white;
+                }
+            }
+
+            td a:hover {
+                color: $theme-yellow;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .container {
+            max-width: 991.98px;
+
+            div.home-left p {
+                font-size: 50px;
+            }
+
+            div.home-right .home-img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .home div.home-left p {
+            font-size: 40px;
+        }
+
+        .long-text p {
+            font-size: 20px;
+        }
+
+        .skills div {
+            min-height: 180px;
+
+            p {
+                text-align: center;
+                padding: 30px;
+            }
+
+            .skills-img {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%,0%);
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        .home {
+            div.home-right {
+                width: 85vw;
+                min-width: 85vw;
+                height: auto;
+                position: relative;
+                z-index: 1;
+                padding: 0%;
+
+                .home-img {
+                    height: auto;
+                    width: 100%;
+                    border: 1px solid $theme-white;
+                }
+            }
+
+            div.home-left {
+                position: absolute;
+                left: 67%;
+                width: 50%;
+                top: 40%;
+                transform: translate(-50%,-50%);
+                z-index: 2;
+
+                p {
+                    font-size: 40px;
+                    color: $theme-blue;
+                }
+            }
+        }
+    }
+
+}
